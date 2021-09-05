@@ -107,4 +107,4 @@ async def tirage_tournois(ctx, *joueur):
     await ctx.send(embed=embed)
 
 
-bot.run("ODUzNjk3MTQzNDgzMTM4MTA4.YMZJaw.2RcNprGxQDsMnNg5pATs18nMxXw")
+bot.run("")
