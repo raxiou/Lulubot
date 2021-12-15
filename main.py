@@ -1,4 +1,5 @@
 ﻿# importation des bibliotheque utile pour le programe
+
 import discord
 import random
 from discord.ext import commands
@@ -8,7 +9,7 @@ from fonction.fonction_hero.image_rec import image_recup
 from fonction.fonction_tournois.tirage_au_sort import creation_tableau
 
 # création du bot
-bot = commands.Bot(command_prefix="l!")
+bot = commands.Bot(command_prefix="L!")
 
 
 @bot.event
@@ -36,10 +37,24 @@ async def hero(ctx, *perso):
     embed.set_thumbnail(url=image)  # ajout de l'image a l'embed
 
     # ajout de l'imprint et du self imprint a l'embed
-    value_imprint = str(imprint["grades"]["D"]) + " (D), " + str(imprint["grades"]["C"]) + " (C), " \
-                    + str(imprint["grades"]["B"]) + " (B), " + str(imprint["grades"]["A"]) + " (A), " + str(
-        imprint["grades"]["S"]) + " (S), " \
-                    + str(imprint["grades"]["SS"]) + " (SS), " + str(imprint["grades"]["SSS"]) + " (SSS), "
+    try:
+        value_imprint = str(imprint["grades"]["D"]) + " (D), " + str(imprint["grades"]["C"]) + " (C), " \
+                        + str(imprint["grades"]["B"]) + " (B), " + str(imprint["grades"]["A"]) + " (A), " \
+                        + str(imprint["grades"]["S"]) + " (S), " \
+                        + str(imprint["grades"]["SS"]) + " (SS), " + str(imprint["grades"]["SSS"]) + " (SSS), "
+    except KeyError:
+        try:
+            value_imprint = str(imprint["grades"]["C"]) + " (C), " \
+                            + str(imprint["grades"]["B"]) + " (B), " + str(imprint["grades"]["A"]) + " (A), " \
+                            + str(imprint["grades"]["S"]) + " (S), " \
+                            + str(imprint["grades"]["SS"]) + " (SS), " + str(imprint["grades"]["SSS"]) + " (SSS), "
+        except KeyError:
+            value_imprint = str(imprint["grades"]["B"]) + " (B), " + str(imprint["grades"]["A"]) + " (A), " \
+                            + str(imprint["grades"]["S"]) + " (S), " \
+                            + str(imprint["grades"]["SS"]) + " (SS), " + str(imprint["grades"]["SSS"]) + " (SSS), "
+
+
+
 
     embed.add_field(name="imprint" + " - " + imprint["type"], value=value_imprint)
 
@@ -64,7 +79,7 @@ async def rta(ctx):
     liste_defi = ['Que des 3* et 4* rgb', 'Un ban en plus', 'Interdit au ml', 'Que des waifus',
                   'Seulement 1 unité par classe', 'Pas de héros limités', 'Pas de chevaliers',
                   'pas de dps pur(perso à moins 12k hp et qui fait des dega)',
-                  'Seulement 1 héros meta', 'Limited de speed < 260']
+                  'Seulement 1 héros meta', 'Limited de speed < 260''pas de AOL']
 
     # choix d'un défi parmis la liste
     defi = random.choice(liste_defi)
@@ -107,4 +122,4 @@ async def tirage_tournois(ctx, *joueur):
     await ctx.send(embed=embed)
 
 
-bot.run(secrets.Token)
+bot.run("ODUzNjk3MTQzNDgzMTM4MTA4.YMZJaw.MmEbIEI8DbWtbydoRUQaOpJYVIs")
