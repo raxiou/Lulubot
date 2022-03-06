@@ -2,6 +2,7 @@
 
 import discord
 import random
+from discord_slash import SlashCommand
 from discord.ext import commands
 from fonction.fonction_hero.Api_fonction import get_api
 from fonction.fonction_hero.search_data import *
@@ -9,8 +10,8 @@ from fonction.fonction_hero.image_rec import image_recup
 from fonction.fonction_tournois.tirage_au_sort import creation_tableau
 
 # création du bot
-bot = commands.Bot(command_prefix="L!")
-
+bot = commands.Bot(command_prefix="l!")
+slash = SlashCommand(bot, sync_commands=True)
 
 @bot.event
 # quand le bot est pret ecrire prêt dans la console
@@ -73,7 +74,7 @@ async def hero(ctx, *perso):
     await ctx.send(embed=embed)
 
 
-@bot.command()
+@slash.slash(name='défi', description='description')
 async def rta(ctx):
     # création de la liste des defi
     liste_defi = ['Que des 3* et 4* rgb', 'Un ban en plus', 'Interdit au ml', 'Que des waifus',
@@ -103,7 +104,7 @@ async def skills(ctx, *perso):
     embed = discord.Embed(title="**" + "**", description=perso_join + ": ", color=0x990066)
 
 
-@bot.command()
+@slash.slash(name='tirage_tournois',description='prend une liste de joueur et creer un arbre de tournois')
 async def tirage_tournois(ctx, *joueur):
     # création de la liste de joueur
     joueur_liste = " ".join(joueur)
@@ -122,4 +123,4 @@ async def tirage_tournois(ctx, *joueur):
     await ctx.send(embed=embed)
 
 
-bot.run("ODUzNjk3MTQzNDgzMTM4MTA4.YMZJaw.MmEbIEI8DbWtbydoRUQaOpJYVIs")
+bot.run("ODUzNjk3MTQzNDgzMTM4MTA4.YMZJaw.P-Prim9gEY_E6tMytjFB2yhNPdI")
