@@ -2,6 +2,8 @@
 
 import discord
 import random
+import os
+from dotenv import load_dotenv
 from discord_slash import SlashCommand
 from discord.ext import commands
 from fonction.fonction_hero.Api_fonction import get_api
@@ -122,5 +124,6 @@ async def tirage_tournois(ctx, *joueur):
     # envoit de l'embed au complet
     await ctx.send(embed=embed)
 
-
+load = load_dotenv()
+key = os.getenv('TOKEN')
 bot.run(key)
