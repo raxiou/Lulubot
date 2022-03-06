@@ -122,5 +122,7 @@ async def tirage_tournois(ctx, *joueur):
     # envoit de l'embed au complet
     await ctx.send(embed=embed)
 
-
-bot.run("ODUzNjk3MTQzNDgzMTM4MTA4.YMZJaw.P-Prim9gEY_E6tMytjFB2yhNPdI")
+fichier = open('key.txt','r')
+for l in fichier:
+    key = l
+bot.run(key)
