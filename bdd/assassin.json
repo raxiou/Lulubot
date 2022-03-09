@@ -1,0 +1,79 @@
+[
+    {
+        "Nom": "Alexa",
+        "rareté": 3,
+        "type" : "eau",
+        "class" : "assassin",
+        "description" : "",
+        "histoire" : "",
+        "self_devotion" : {
+            "type" : "atk",
+            "grade" : {
+                "D" : 24,
+                "C" : 36,
+                "B" : 48,
+                "A" : 60,
+                "S" : 72,
+                "SS" : 84,
+                "SSS" : 96
+            },
+        "devotion" : {
+            "type" : "atk",
+            "grade" : {
+                "D" : 36,
+                "C" : 54,
+                "B" : 72,
+                "A" : 90,
+                "S" : 108,
+                "SS" : 126,
+                "SSS" : 144
+            },
+        "stats":{
+            "lvl60":{
+                "atk": 1081,
+                "hp": 4572,
+                "spd": 111,
+                "def": 494,
+                "cc": 0.23,
+                "dcc": 150,
+                "dual": 5,
+                "eff": 0,
+                "er": 0
+            },
+            "lvl50":{
+                "atk": 828,
+                "hp": 3642,
+                "spd": 111,
+                "def": 398,
+                "cc": 0.23,
+                "dcc": 150,
+                "dual": 5,
+                "eff": 0,
+                "er": 0
+            },
+            "lvl40":{
+                "atk": 609,
+                "hp": 2784,
+                "spd": 111,
+                "def": 310,
+                "cc": 0.23,
+                "dcc": 150,
+                "dual": 5,
+                "eff": 0,
+                "er": 0
+            },
+        "skills":{
+            "S1":{
+
+            },
+            "S2":{
+
+            },
+            "S3":{
+
+            }
+        }
+        }
+        }
+    }
+]
